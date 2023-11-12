@@ -1,7 +1,7 @@
 import { test, Page } from '@playwright/test';
 import RegistrationPage from '../pages/RegistrationPage';
 
-test('successful user registration', async ({ page }: { page: Page }) => {
+test('successful user registration', async ({ page })=> {
   const registrationPage = new RegistrationPage(page);
 
   const randomNum = Math.floor(Math.random() * 1000000);

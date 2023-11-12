@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-=======
-// RegistrationPage.ts
->>>>>>> 1949b6e93ed5e0de8c8565dc7bf7697d9e772a5c
 import { Page, Locator, expect } from '@playwright/test';
 
 class RegistrationPage {

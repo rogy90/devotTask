@@ -1,7 +1,7 @@
 // loginAndPurchaseTest.spec.ts
 import { test } from '@playwright/test';
 import LoginPage from '../pages/LoginPage';
-import { CheckoutPage } from '../pages/CheckoutPage';
+import CheckoutPage  from '../pages/CheckoutPage';
 
 test('Login as user and complete a checkout', async ({ page }) => {
   const loginPage = new LoginPage(page);
