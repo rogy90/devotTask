@@ -1,4 +1,4 @@
-// loginAndPurchaseTest.spec.ts
+
 import { test } from '@playwright/test';
 import LoginPage from '../pages/LoginPage';
 import CheckoutPage  from '../pages/CheckoutPage';
