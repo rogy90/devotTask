@@ -3,7 +3,6 @@ import SearchPage from '../pages/SearchPage';
 import * as testData from '../utilities/testData';
 
 test('Search by category, sort and choose a product', async ({ page }) => {
-test('Search by category, sort and choose a product', async ({ page }) => {
   const searchPage = new SearchPage(page);
 
   await page.goto('/');

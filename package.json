@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "For job interview purpose",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "runAllChromeHeaded": "npx playwright test --headed --project=chromium",
+    "runAllCrossBrowserHeaded": "npx playwright test --headed",
+    "lastRunReport": "npx playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.9.0"
-  },
-  "dependencies": {
-    "@cucumber/cucumber": "^10.0.1"
   }
 }
