@@ -1,4 +1,4 @@
-import { Page, Locator, expect } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
 class LoginPage {
     page: Page;
@@ -19,7 +19,7 @@ class LoginPage {
       await this.accountLink.click();
     }
   
-    async login(username, password) {
+    async login(username : string, password : string) {
       await this.loginNameInput.click();
       await this.loginNameInput.fill(username);
       await this.passwordInput.click();

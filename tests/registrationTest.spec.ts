@@ -1,15 +1,25 @@
-import { test, Page } from '@playwright/test';
+// registrationTest.spec.ts
+import { test } from '@playwright/test';
 import RegistrationPage from '../pages/RegistrationPage';
+import * as testData from '../utilities/testData';
 
-test('successful user registration', async ({ page })=> {
+test('User registration with fulfilling only required fields', async ({ page }) => {
   const registrationPage = new RegistrationPage(page);
 
-  const randomNum = Math.floor(Math.random() * 1000000);
-  const uniqueEmail = `test${randomNum}@test.com`;
-  const uniqueLoginName = `testAcc${randomNum}`;
-  await page.goto('https://automationteststore.com/');
+  await page.goto('/');
   await registrationPage.goToRegistrationPage();
-  await registrationPage.fillRegistrationForm('Igor', 'Test', uniqueEmail, 'Street 1', 'City', '3513', '100000', uniqueLoginName, 'StrongPass1!');
+  await registrationPage.fillRegistrationForm(
+    testData.firstName, 
+    testData.lastName, 
+    testData.getUniqueEmail(),
+    testData.address, 
+    testData.city, 
+    testData.zoneId, 
+    testData.postcode, 
+    testData.getUniqueLoginName(), 
+    testData.password
+  );
   await registrationPage.submitForm();
   await registrationPage.verifyRegistrationSuccess();
+  await page.close();
 });

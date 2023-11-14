@@ -1,9 +1,9 @@
 import { Page, Locator, expect } from '@playwright/test';
+import * as testData from '../utilities/testData';
 
 export class CheckoutPage {
   page: Page;
   productPageLink: string;
-  sizeOptionSelect: Locator;
   quantityInput: Locator;
   addToCartLink: Locator;
   checkoutButton: Locator;
@@ -11,20 +11,19 @@ export class CheckoutPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.productPageLink = 'https://automationteststore.com/index.php?rt=product/product&product_id=80';
-    this.sizeOptionSelect = page.locator('#option321');
+    this.productPageLink = testData.productPageLink;
     this.quantityInput = page.locator('#product_quantity');
     this.addToCartLink = page.getByRole('link', { name: 'Add to Cart' });
     this.checkoutButton = page.locator('#cart_checkout2');
-    this.confirmOrderButton = page.getByRole('button', { name: ' Confirm Order' });
+    this.confirmOrderButton = page.getByRole('button', { name: 'Confirm Order' });
   }
 
   async navigateToProductPage(): Promise<void> {
     await this.page.goto(this.productPageLink);
   }
 
-  async selectProduct(size: string, quantity: string): Promise<void> {
-    await this.sizeOptionSelect.selectOption(size);
+  async selectProduct(quantity: string): Promise<void> {
+ 
     await this.quantityInput.fill(quantity);
   }
 
