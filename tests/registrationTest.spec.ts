@@ -8,17 +8,8 @@ test('User registration with fulfilling only required fields', async ({ page }) 
 
   await page.goto('/');
   await registrationPage.goToRegistrationPage();
-  await registrationPage.fillRegistrationForm(
-    testData.firstName, 
-    testData.lastName, 
-    testData.getUniqueEmail(),
-    testData.address, 
-    testData.city, 
-    testData.zoneId, 
-    testData.postcode, 
-    testData.getUniqueLoginName(), 
-    testData.password
-  );
+  await registrationPage.fillRegistrationForm(testData.firstName, testData.lastName, testData.getUniqueEmail(), testData.address,  testData.city, testData.zoneId, 
+  testData.postcode, testData.getUniqueLoginName(), testData.password);
   await registrationPage.submitForm();
   await registrationPage.verifyRegistrationSuccess();
   await page.close();

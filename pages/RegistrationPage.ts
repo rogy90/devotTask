@@ -40,17 +40,7 @@ class RegistrationPage {
     await this.continueButton.click();
   }
 
-  async fillRegistrationForm(
-    firstName: string, 
-    lastName: string, 
-    email: string, 
-    address: string, 
-    city: string, 
-    zoneId: string, 
-    postcode: string, 
-    loginName: string, 
-    password: string
-  ): Promise<void> {
+  async fillRegistrationForm( firstName: string, lastName: string, email: string, address: string, city: string, zoneId: string, postcode: string, loginName: string, password: string): Promise<void> {
     await this.firstNameInput.fill(firstName);
     await this.lastNameInput.fill(lastName);
     await this.emailInput.fill(email);
